@@ -1,0 +1,107 @@
+/* Background image properties */
+.bg-image-vertical {
+  position: relative;
+  overflow: hidden;
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: cover;
+  filter: brightness(0.8);
+}
+
+/* Responsive height customization */
+@media (min-width: 1025px) {
+  .h-custom-2 {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Form container styling */
+form {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* Input fields styling */
+.form-outline .form-control {
+  border: 2px solid #709085;
+  border-radius: 4px;
+  padding: 12px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form-outline .form-control:focus {
+  border-color: #56776b;
+  box-shadow: 0 0 0 0.2rem rgba(86, 119, 107, 0.25);
+}
+
+/* Label styling */
+.form-outline .form-label {
+  font-size: 0.9rem;
+  color: #333;
+  font-weight: 500;
+}
+
+/* Error message styling */
+.text-danger {
+  font-size: 0.85rem;
+  margin-top: 5px;
+}
+
+/* Button styling */
+.btn-info {
+  background-color: #709085;
+  border: none;
+  padding: 12px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  width: 100%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-info:hover {
+  background-color: #56776b;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Link styling */
+a.link-info {
+  color: #709085;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a.link-info:hover {
+  color: #56776b;
+  text-decoration: underline;
+}
+
+/* Custom text styling */
+h3.fw-normal {
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Spinner styling */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+  border-width: 0.5em;
+}
+
+/* Additional media queries for responsiveness */
+@media (max-width: 768px) {
+  .h-custom-2 {
+    padding: 20px;
+  }
+
+  form {
+    width: 100%;
+  }
+}

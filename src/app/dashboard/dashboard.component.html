@@ -1,0 +1,23 @@
+<!-- src/app/dashboard/dashboard.component.html -->
+ <app-navbar></app-navbar>
+<div class="dashboard-container">
+    <div class="welcome-section">
+      <h1>Welcome, {{ user.displayName }}</h1>
+    </div>
+  
+    <div class="order-summary">
+      <h2>Order Summary</h2>
+      <div *ngIf="orderDetails.length > 0">
+        <ul>
+          <li *ngFor="let item of orderDetails">
+            {{ item.name }}: {{ item.totalCost | currency }}
+          </li>
+        </ul>
+        <p>Total: {{ calculateTotal() | currency }}</p>
+      </div>
+      <div *ngIf="orderDetails.length === 0" class="no-orders-message">
+        <p>No orders found.</p>
+      </div>
+    </div>
+  </div>
+  

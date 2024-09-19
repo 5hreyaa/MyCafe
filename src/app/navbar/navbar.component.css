@@ -1,0 +1,89 @@
+/* Basic Styling for Navbar */
+.navbar {
+  background-color: #ffffff; /* White background */
+  padding: 15px 20px; /* Increased padding for better spacing */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Slightly stronger shadow */
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+/* Navbar Brand (Logo) */
+.navbar-brand {
+  margin-right: auto; /* Align logo to the left */
+}
+
+/* Navbar Brand Image (Logo) */
+.navbar-brand img {
+  height: 130px; /* Original size as per your image */
+}
+
+/* Navbar Items */
+.navbar-collapse {
+  margin-left: auto; /* Align nav items to the right */
+}
+
+/* Navbar Items List */
+.navbar-nav {
+  flex-direction: row;
+  align-items: center;
+  margin-left: auto; /* Ensure navbar items align to the right */
+}
+
+/* Navbar Items List */
+.navbar-nav .nav-item {
+  list-style: none; /* Remove default bullet points */
+  margin-right: 20px; /* Spacing between menu items */
+}
+
+/* Navbar links and icons styling */
+.navbar-nav .nav-link,
+.navbar-toggler .fas {
+  color: #343a40; /* Dark color for contrast */
+  font-weight: 600; /* Semi-bold text for navbar items */
+  text-transform: uppercase; /* Uppercase for consistency */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  color: #ffc107; /* Yellow hover effect */
+}
+
+/* Navbar links after scroll */
+.navbar-scrolled .nav-link,
+.navbar-scrolled .navbar-toggler .fas {
+  color: #343a40; /* Darker color after scroll */
+}
+
+/* Add Spacing and Hover Effects */
+.navbar-nav .nav-link {
+  padding: 10px 20px; /* Increased padding for better click area */
+  border-radius: 5px;
+  transition: background-color 0.3s, color 0.3s;
+  font-weight: 600; /* Semi-bold text for all navbar items */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link.active {
+  background-color: #495057; /* Darker hover background */
+  color: #ffffff; /* White text on hover */
+}
+
+/* Adjusting Navbar Toggler */
+.navbar-toggler {
+  border: none; /* Remove border */
+}
+
+.navbar-toggler .fas {
+  color: #343a40; /* Toggler icon color */
+}
+
+/* Ensure proper spacing and alignment */
+.container {
+  max-width: 1200px; /* Limit container width for better layout */
+}
+
+/* Body background color */
+body {
+  background-color: #f1f1f1;
+}

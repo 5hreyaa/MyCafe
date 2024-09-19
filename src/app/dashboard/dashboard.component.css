@@ -1,0 +1,78 @@
+/* src/app/dashboard/dashboard.component.css */
+
+/* Container for the entire dashboard */
+.dashboard-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #f4f4f9;
+  min-height: 100vh;
+  background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-47493.jpg?t=st=1724085493~exp=1724089093~hmac=2ec736645bb523c0177f2f52c8735a07e04cd6d2e45d2f3de386872bfc005e79&w=2000'); /* Update this path to your image */
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-position: center; /* Centers the image */
+  background-repeat: no-repeat; /* Prevents repeating the image */
+}
+
+/* Welcome message section */
+.welcome-section {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.welcome-section h1 {
+  font-size: 2.5rem;
+  color: #f1ebeb;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #666;
+}
+
+/* Order summary section */
+.order-summary {
+  width: 100%;
+  max-width: 800px;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.order-summary h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.order-summary ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.order-summary li {
+  font-size: 1.2rem;
+  color: #444;
+  padding: 10px 0;
+  border-bottom: 1px solid #ddd;
+}
+
+.order-summary li:last-child {
+  border-bottom: none;
+}
+
+.order-summary p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+  margin-top: 20px;
+}
+
+/* Message when no orders are found */
+.no-orders-message {
+  text-align: center;
+  font-size: 1.2rem;
+  color: #888;
+}

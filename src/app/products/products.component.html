@@ -1,0 +1,34 @@
+<app-navbar></app-navbar>
+
+<div class="products-container">
+  <div class="title-section">
+    <h1 class="title">Discover Our Delicious Offerings</h1>
+    <p class="subtitle">Indulge in a selection of our finest beverages and pastries, crafted with love.</p>
+  </div>
+  
+  <div class="product-list">
+    <div class="product-card" *ngFor="let product of products">
+      <img [src]="product.image" alt="{{ product.name }}" class="product-image">
+      <div class="product-details">
+        <h2>{{ product.name }}</h2>
+        <p>{{ product.description }}</p>
+        <p class="price">Price: {{ product.price }}</p>
+        
+        <div *ngIf="product.quantity === 0">
+          <button class="btn btn-info" (click)="incrementQuantity(product)">Add</button>
+        </div>
+        
+        <div *ngIf="product.quantity > 0" class="quantity-controls">
+          <button class="btn btn-danger" (click)="decrementQuantity(product)">-</button>
+          <span class="quantity">{{ product.quantity }}</span>
+          <button class="btn btn-success" (click)="incrementQuantity(product)">+</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Order Now Button at the Bottom -->
+<div class="order-button-container-bottom">
+  <button (click)="navigateToDashboard()">ORDER NOW</button>
+</div>

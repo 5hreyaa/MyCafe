@@ -1,0 +1,45 @@
+<nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+  <div class="container">
+    <div class="d-flex w-100 align-items-center">
+      <!-- Navbar brand (logo) -->
+      <div class="navbar-brand">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEukW4DPKavYQdC8K5jH5-ktFQA-3I-KuxXA&s" height="130" alt="" loading="lazy" />
+      </div>
+
+      <!-- Navbar items -->
+      <div class="collapse navbar-collapse ms-auto" id="navbarExample01">
+        <ng-container *ngIf="this.auth.isAuthenticated(); then authenticated; else notauthenticated">
+        </ng-container>
+
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <ng-template #notauthenticated>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/register" routerLinkActive="active" href="javascript:void(0);">REGISTER</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active" href="javascript:void(0);">LOGIN</a>
+            </li>
+          </ng-template>
+
+          <ng-template #authenticated>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active" href="javascript:void(0);">HOME</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/products" routerLinkActive="active" href="javascript:void(0);">PRODUCTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/contact" routerLinkActive="active" href="javascript:void(0);">CONTACT</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" routerLink="/dashboard" routerLinkActive="active" href="javascript:void(0);">DASHBOARD</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="javascript:void(0);" (click)="logout()">LOGOUT</a>
+            </li>
+          </ng-template>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>
