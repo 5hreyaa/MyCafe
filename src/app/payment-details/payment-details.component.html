@@ -1,0 +1,64 @@
+<div class="payment-container">
+  <h2>Payment Details - {{selectedPaymentMethod}}</h2>
+  <p class="amount">Amount to Pay: ₹{{amount}}</p>
+
+  <div *ngIf="paymentSuccess" class="success-message">
+    <p>Payment processing... Please wait!</p>
+  </div>
+
+  <form [formGroup]="paymentForm" (ngSubmit)="processPayment($event)" *ngIf="!paymentSuccess">
+    <!-- Credit/Debit Card Form -->
+    <div *ngIf="selectedPaymentMethod === 'Credit Card' || selectedPaymentMethod === 'Debit Card'">
+      <div class="form-group">
+        <label for="cardNumber">Card Number</label>
+        <input type="text" id="cardNumber" formControlName="cardNumber" placeholder="1234 5678 9012 3456">
+        <div *ngIf="submitted && paymentForm.get('cardNumber')?.errors" class="error">
+          ❌ Please enter a valid 16-digit card number
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="expiryDate">Expiry Date</label>
+          <input type="text" id="expiryDate" formControlName="expiryDate" placeholder="MM/YY">
+          <div *ngIf="submitted && paymentForm.get('expiryDate')?.errors" class="error">
+            ❌ Enter a valid expiry date (MM/YY)
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cvv">CVV</label>
+          <input type="password" id="cvv" formControlName="cvv" placeholder="123">
+          <div *ngIf="submitted && paymentForm.get('cvv')?.errors" class="error">
+            ❌ Enter a valid CVV
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UPI Form -->
+    <div *ngIf="selectedPaymentMethod === 'UPI'">
+      <div class="form-group">
+        <label for="upiId">UPI ID</label>
+        <input type="text" id="upiId" formControlName="upiId" placeholder="yourname@upiapp">
+        <div *ngIf="submitted && paymentForm.get('upiId')?.errors" class="error">
+          ❌ Enter a valid UPI ID (example&#64;upi)
+        </div>
+      </div>
+    </div>
+
+    <!-- Cash on Delivery -->
+    <div *ngIf="selectedPaymentMethod === 'Cash on Delivery'">
+      <p class="cod-note">
+        You have selected Cash on Delivery. You will need to pay ₹{{amount}} when your order arrives.
+      </p>
+    </div>
+
+    <div class="button-group">
+      <!-- Back button removed as requested -->
+      <button type="submit" class="btn-primary full-width">
+        {{selectedPaymentMethod === 'Cash on Delivery' ? 'Place Order' : 'Pay Now'}}
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,23 +1,34 @@
-<!-- src/app/dashboard/dashboard.component.html -->
- <app-navbar></app-navbar>
+<!-- Navbar -->
+<app-navbar></app-navbar>
+
 <div class="dashboard-container">
-    <div class="welcome-section">
-      <h1>Welcome, {{ user.displayName }}</h1>
-    </div>
-  
-    <div class="order-summary">
-      <h2>Order Summary</h2>
-      <div *ngIf="orderDetails.length > 0">
-        <ul>
-          <li *ngFor="let item of orderDetails">
-            {{ item.name }}: {{ item.totalCost | currency }}
-          </li>
-        </ul>
-        <p>Total: {{ calculateTotal() | currency }}</p>
-      </div>
-      <div *ngIf="orderDetails.length === 0" class="no-orders-message">
-        <p>No orders found.</p>
-      </div>
-    </div>
+  <div class="welcome-section">
+    <h1>Welcome, {{ user.displayName }}</h1>
   </div>
-  
+
+  <!-- Order Summary Section -->
+  <div class="order-summary">
+    <h2>Order Summary</h2>
+
+    <div *ngIf="orderDetails.length > 0; else noOrders">
+      <ul class="order-list">
+        <li *ngFor="let item of orderDetails" class="order-item">
+          <span class="item-name">{{ item.name }}</span>
+          <span class="item-cost">{{ item.totalCost | currency }}</span>
+        </li>
+      </ul>
+
+      <p class="total-amount">Total: <strong>{{ getTotalAmount() | currency }}</strong></p>
+
+      <!-- Payment Button -->
+      <button (click)="proceedToPayment()" class="payment-button">
+        Proceed to Payment
+      </button>
+    </div>
+
+    <!-- No Orders Message -->
+    <ng-template #noOrders>
+      <p class="no-orders-message">No orders found.</p>
+    </ng-template>
+  </div>
+</div>

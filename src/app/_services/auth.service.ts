@@ -9,21 +9,18 @@ export class AuthService {
 
   constructor(private router: Router, private http: HttpClient) {}
 
-  // Check if the user is authenticated
   isAuthenticated(): boolean {
-    return sessionStorage.getItem('token') !== null;
+    return typeof window !== 'undefined' && sessionStorage.getItem('token') !== null;
   }
 
-  // Check if access is allowed and handle redirection
   canAccess(): boolean {
-    if (!this.isAuthenticated()) {
+    if (!this.isAuthenticated() && typeof window !== 'undefined') {
       this.router.navigate(['/login']);
       return false;
     }
     return true;
   }
 
-  // Updated: Removed the automatic redirection to products
   canAuthenticate(): boolean {
     return this.isAuthenticated();
   }
@@ -35,7 +32,9 @@ export class AuthService {
   }
 
   storeToken(token: string) {
-    sessionStorage.setItem('token', token);
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('token', token);
+    }
   }
 
   login(email: string, password: string) {
@@ -52,6 +51,8 @@ export class AuthService {
   }
 
   removeToken() {
-    sessionStorage.removeItem('token');
+    if (typeof window !== 'undefined') {
+      sessionStorage.removeItem('token');
+    }
   }
 }

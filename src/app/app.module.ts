@@ -10,12 +10,15 @@ import { RegisterComponent } from './register/register.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { RouterModule,Routes } from '@angular/router';
 import { LogoutComponent } from './logout/logout.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule}  from '@angular/common/http';
 import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component'
+import { ContactComponent } from './contact/contact.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentDetailsComponent } from './payment-details/payment-details.component';
+import { AboutComponent } from './about/about.component'
 
-const routes:Routes =[ 
+const routes:Routes =[
   {path: '', component: HomeComponent},
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
@@ -23,8 +26,8 @@ const routes:Routes =[
   {path: 'products', component: ProductsComponent },
   {path: 'contact', component: ContactComponent},
   {path: 'home', component: HomeComponent}
-  
-  
+
+
 
 ]
 
@@ -38,13 +41,17 @@ const routes:Routes =[
     DashboardComponent,
     LogoutComponent,
     ProductsComponent,
-    ContactComponent
+    ContactComponent,
+    PaymentComponent,
+    PaymentDetailsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
      RouterModule.forRoot(routes),
      FormsModule,
+     ReactiveFormsModule ,
      HttpClientModule
   ],
   providers: [

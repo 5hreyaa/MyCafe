@@ -1,7 +1,7 @@
-// src/app/dashboard/dashboard.component.ts
 import { Component, OnInit } from '@angular/core';
 import { OrderService } from '../_services/order.service';
 import { AuthService } from '../_services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -15,7 +15,7 @@ export class DashboardComponent implements OnInit {
   };
   orderDetails: any[] = [];
 
-  constructor(private auth: AuthService, private orderService: OrderService) {}
+  constructor(private auth: AuthService, private orderService: OrderService, private router: Router) {}
 
   ngOnInit(): void {
     this.auth.canAccess();
@@ -34,7 +34,24 @@ export class DashboardComponent implements OnInit {
     console.log('Order Details:', this.orderDetails); // Debugging statement
   }
 
-  calculateTotal(): number {
+  // Calculate total order amount
+  getTotalAmount(): number {
     return this.orderDetails.reduce((total, item) => total + item.totalCost, 0);
+  }
+
+  // Proceed to Payment with Order Amount
+  proceedToPayment(): void {
+    const totalAmount = this.getTotalAmount();
+
+    if (totalAmount <= 0) {
+      alert('No items in the order. Please add items before proceeding.');
+      return;
+    }
+
+    // Store order total in localStorage before navigation
+    localStorage.setItem('orderAmount', totalAmount.toString());
+
+    // Navigate to the payment page
+    this.router.navigate(['/payment']);
   }
 }

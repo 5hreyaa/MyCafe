@@ -1,45 +1,61 @@
-<nav class="navbar navbar-expand-lg fixed-top navbar-scroll">
+<nav class="navbar navbar-expand-lg fixed-top navbar-scroll bg-light">
   <div class="container">
-    <div class="d-flex w-100 align-items-center">
-      <!-- Navbar brand (logo) -->
-      <div class="navbar-brand">
-        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEukW4DPKavYQdC8K5jH5-ktFQA-3I-KuxXA&s" height="130" alt="" loading="lazy" />
-      </div>
+    <!-- Brand Logo -->
+    <a class="navbar-brand" routerLink="/">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTEukW4DPKavYQdC8K5jH5-ktFQA-3I-KuxXA&s"
+        height="60"
+        alt="MyCafe Logo"
+        loading="lazy"
+      />
+    </a>
 
-      <!-- Navbar items -->
-      <div class="collapse navbar-collapse ms-auto" id="navbarExample01">
-        <ng-container *ngIf="this.auth.isAuthenticated(); then authenticated; else notauthenticated">
+    <!-- Toggle Button for Mobile -->
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarExample01"
+      aria-controls="navbarExample01"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <!-- Nav Items -->
+    <div class="collapse navbar-collapse" id="navbarExample01">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ng-container *ngIf="auth.isAuthenticated(); else notauthenticated">
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/home" routerLinkActive="active">HOME</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/products" routerLinkActive="active">PRODUCTS</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/contact" routerLinkActive="active">CONTACT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/dashboard" routerLinkActive="active">DASHBOARD</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/about" routerLinkActive="active">ABOUT</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="logout()">LOGOUT</a>
+          </li>
         </ng-container>
 
-        <ul class="navbar-nav mb-2 mb-lg-0">
-          <ng-template #notauthenticated>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/register" routerLinkActive="active" href="javascript:void(0);">REGISTER</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/login" routerLinkActive="active" href="javascript:void(0);">LOGIN</a>
-            </li>
-          </ng-template>
-
-          <ng-template #authenticated>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/home" routerLinkActive="active" href="javascript:void(0);">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/products" routerLinkActive="active" href="javascript:void(0);">PRODUCTS</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/contact" routerLinkActive="active" href="javascript:void(0);">CONTACT</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" routerLink="/dashboard" routerLinkActive="active" href="javascript:void(0);">DASHBOARD</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" aria-current="page" href="javascript:void(0);" (click)="logout()">LOGOUT</a>
-            </li>
-          </ng-template>
-        </ul>
-      </div>
+        <ng-template #notauthenticated>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/register" routerLinkActive="active">REGISTER</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/login" routerLinkActive="active">LOGIN</a>
+          </li>
+        </ng-template>
+      </ul>
     </div>
   </div>
 </nav>

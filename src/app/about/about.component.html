@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shreya Sri - Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .profile-header {
+            position: relative;
+            background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            margin-bottom: 30px;
+        }
+
+        .header-content {
+            display: flex;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .background-pattern {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 60%;
+            height: 100%;
+            opacity: 0.1;
+            background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%23ffffff' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E");
+        }
+
+        .profile-photo {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            object-fit: cover;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 50px;
+            color: #647dee;
+        }
+
+        .profile-info {
+            margin-left: 30px;
+            color: white;
+        }
+
+        .profile-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .pronouns {
+            font-size: 14px;
+            opacity: 0.9;
+            font-weight: 400;
+            margin-left: 10px;
+        }
+
+        .profile-title {
+            font-size: 18px;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .profile-location {
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .location-icon {
+            margin-right: 5px;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 15px;
+        }
+
+        .job-section {
+            background-color: #fff;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: #444;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .section-title::before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%);
+            border-radius: 2px;
+        }
+
+        .job-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .job-tag {
+            background: linear-gradient(to right, #f1f1f1, #e6e6e6);
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 15px;
+            font-weight: 500;
+            color: #555;
+            display: flex;
+            align-items: center;
+            transition: all 0.3s ease;
+            border: 1px solid #eaeaea;
+        }
+
+        .job-tag:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+            background: linear-gradient(135deg, #7f53ac 0%, #647dee 100%);
+            color: white;
+        }
+
+        .tag-icon {
+            margin-right: 8px;
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+
+            .profile-info {
+                margin-left: 0;
+                margin-top: 20px;
+            }
+
+            .job-tags {
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile-header">
+            <div class="background-pattern"></div>
+            <div class="header-content">
+                <div class="profile-photo">
+                    S
+                </div>
+                <div class="profile-info">
+                    <h1 class="profile-name">
+                        Shreya Sri <span class="pronouns">(She/Her)</span>
+                    </h1>
+                    <p class="profile-title">Student at Coimbatore Institute of Technology</p>
+                    <p class="profile-title">MSc Software Systems</p>
+                    <p class="profile-title">71762231052</p>
+                    <div class="profile-location">
+                        <svg class="location-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                            <path d="M8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10zm0-7a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+                        </svg>
+                        Coimbatore, Tamil Nadu, India
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="job-section">
+            <h2 class="section-title">Career Interests</h2>
+            <div class="job-tags">
+                <div class="job-tag">
+                    <svg class="tag-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                        <path d="M6.854 4.646a.5.5 0 0 1 0 .708L4.207 8l2.647 2.646a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 0 1 .708 0zm2.292 0a.5.5 0 0 0 0 .708L11.793 8l-2.647 2.646a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708 0z"/>
+                    </svg>
+                    Software Engineer
+                </div>
+                <div class="job-tag">
+                    <svg class="tag-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M5.854 4.854a.5.5 0 1 0-.708-.708l-3.5 3.5a.5.5 0 0 0 0 .708l3.5 3.5a.5.5 0 0 0 .708-.708L2.707 8l3.147-3.146zm4.292 0a.5.5 0 0 1 .708-.708l3.5 3.5a.5.5 0 0 1 0 .708l-3.5 3.5a.5.5 0 0 1-.708-.708L13.293 8l-3.147-3.146z"/>
+                    </svg>
+                    Web Developer
+                </div>
+                <div class="job-tag">
+                    <svg class="tag-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M12.5 2a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5zM11 8h3v6h-3V8zm-6 1H2v5h3V9z"/>
+                        <path d="M5.5 2A2.5 2.5 0 1 0 8 4.5 2.5 2.5 0 0 0 5.5 2zM8 9H5v6h3V9z"/>
+                    </svg>
+                    Web Designer
+                </div>
+                <div class="job-tag">
+                    <svg class="tag-icon" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path fill-rule="evenodd" d="M14 4.5V14a2 2 0 0 1-2 2h-1v-1h1a1 1 0 0 0 1-1V4.5h-2A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v9H2V2a2 2 0 0 1 2-2h5.5L14 4.5ZM3.397 14.841a1.13 1.13 0 0 0 .401.823c.13.108.289.192.478.252.19.061.411.091.665.091.338 0 .624-.053.859-.158.236-.105.416-.252.539-.44.125-.189.187-.408.187-.656 0-.224-.045-.41-.134-.56a1.001 1.001 0 0 0-.375-.357l-.18-.107c-.32-.18-.51-.314-.571-.396L4.895 12.9v-.5h.717c.428 0 .76.13.995.389.236.26.354.644.354 1.151v.105h1.108v-.11c0-.656-.174-1.17-.52-1.544-.346-.375-.883-.562-1.611-.562H4.778v.695c.45.028.168.137.375.33.205.891.314.78.328.864a.75.75 0 0 1 .164.45c0 .22-.066.403-.193.543-.126.14-.296.21-.51.21-.215 0-.384-.07-.51-.21a.652.652 0 0 1-.19-.463h-.998c0 .413.123.743.37.99zm7.035-.709H9.25v.956h1.182v-.956zm-3.714.956h1.182V15h-1.182v1.088H7.9V15H1.854v-.956h6.046v-2.25H6.932v2.25Zm2.532-4.256v2.422H7.746v-2.422h1.504Z"/>
+                    </svg>
+                    Website Developer
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

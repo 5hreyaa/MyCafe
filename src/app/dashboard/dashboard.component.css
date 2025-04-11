@@ -1,5 +1,3 @@
-/* src/app/dashboard/dashboard.component.css */
-
 /* Container for the entire dashboard */
 .dashboard-container {
   display: flex;
@@ -8,71 +6,113 @@
   padding: 20px;
   background-color: #f4f4f9;
   min-height: 100vh;
-  background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-47493.jpg?t=st=1724085493~exp=1724089093~hmac=2ec736645bb523c0177f2f52c8735a07e04cd6d2e45d2f3de386872bfc005e79&w=2000'); /* Update this path to your image */
-  background-size: cover; /* Ensures the image covers the entire container */
-  background-position: center; /* Centers the image */
-  background-repeat: no-repeat; /* Prevents repeating the image */
+  background-image: url('https://img.freepik.com/free-vector/restaurant-mural-wallpaper_52683-47493.jpg?t=st=1724085493~exp=1724089093~hmac=2ec736645bb523c0177f2f52c8735a07e04cd6d2e45d2f3de386872bfc005e79&w=2000');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 /* Welcome message section */
 .welcome-section {
   text-align: center;
   margin-bottom: 30px;
+  padding: 15px;
+  background: rgba(0, 0, 0, 0.5); /* Slight background for readability */
+  border-radius: 10px;
 }
 
 .welcome-section h1 {
   font-size: 2.5rem;
   color: #f1ebeb;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
 }
 
 .welcome-section p {
-  font-size: 1.1rem;
-  color: #666;
+  font-size: 1.2rem;
+  color: #f1f1f1;
 }
 
 /* Order summary section */
 .order-summary {
   width: 100%;
   max-width: 800px;
-  background-color: #fff;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
+  background: linear-gradient(145deg, #ffffff, #f7f7f7);
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  padding: 25px;
   margin-top: 20px;
 }
 
 .order-summary h2 {
   font-size: 2rem;
-  color: #333;
-  margin-bottom: 15px;
+  color: #dc3545;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
+/* Order list */
 .order-summary ul {
   list-style-type: none;
   padding: 0;
 }
 
 .order-summary li {
+  display: flex;
+  justify-content: space-between;
   font-size: 1.2rem;
   color: #444;
-  padding: 10px 0;
+  padding: 12px 15px;
   border-bottom: 1px solid #ddd;
+  transition: background 0.3s;
 }
 
 .order-summary li:last-child {
   border-bottom: none;
 }
 
+.order-summary li:hover {
+  background: #f9f9f9;
+}
+
+/* Total amount */
 .order-summary p {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   font-weight: bold;
   color: #333;
+  text-align: center;
   margin-top: 20px;
+}
+
+/* Payment Button */
+.payment-button {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto 0;
+  padding: 12px;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: white;
+  background: #dc3545;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+.payment-button:hover {
+  background: #c82333;
+  transform: scale(1.05);
+}
+
+.payment-button:active {
+  transform: scale(0.98);
 }
 
 /* Message when no orders are found */
 .no-orders-message {
   text-align: center;
   font-size: 1.2rem;
-  color: #888;
+  color: #777;
+  margin-top: 15px;
 }

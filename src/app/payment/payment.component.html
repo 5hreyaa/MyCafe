@@ -1,0 +1,44 @@
+<div class="payment-method-container">
+  <div class="payment-method-card">
+    <h2>Select Payment Method</h2>
+
+    <div class="amount-display">
+      <span>Amount to be paid:</span>
+      <strong>₹{{ amount }}</strong>
+    </div>
+
+    <div class="payment-options">
+      <button class="payment-button" (click)="handlePaymentOption('Credit Card')">
+        <span class="button-icon">💳</span>
+        <div class="button-content">
+          <span>Credit Card</span>
+          <small>Visa, MasterCard, RuPay</small>
+        </div>
+      </button>
+
+      <button class="payment-button" (click)="handlePaymentOption('Debit Card')">
+        <span class="button-icon">💳</span>
+        <div class="button-content">
+          <span>Debit Card</span>
+          <small>Visa, MasterCard, RuPay</small>
+        </div>
+      </button>
+
+      <button class="payment-button" (click)="handlePaymentOption('Cash on Delivery')">
+        <span class="button-icon">💵</span>
+        <div class="button-content">
+          <span>Cash on Delivery</span>
+          <small>Pay when you receive</small>
+        </div>
+      </button>
+
+      <button class="payment-button" (click)="handlePaymentOption('UPI')">
+        <span class="button-icon">📱</span>
+        <div class="button-content">
+          <span>UPI</span>
+          <small>Google Pay, PhonePe, BHIM</small>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
